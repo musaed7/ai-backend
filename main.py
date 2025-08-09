@@ -1,7 +1,8 @@
 import os
 import sys
 # DON'T CHANGE THIS !!!
-sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
+>>>>>>> 4721923 (Move main.py to root and fix sys.path for deployment)
 
 from flask import Flask, send_from_directory
 from src.models.user import db
@@ -39,4 +40,5 @@ def serve(path):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))  # Use Railway port or default 5000
     app.run(host='0.0.0.0', port=port, debug=True)
+# fix sys.path for deployment
 
